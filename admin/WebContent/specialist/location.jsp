@@ -41,38 +41,38 @@
             </div>
         </td>
     </tr>
-    <tr>
-        <td width="2%">&nbsp;</td>
-        <td valign="top">
-            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inputtable">
-                <logic:messagesPresent name="errors" message="true">
-                    <tr>
-                        <td class="labelLeft" colspan="2" valign="top">
-                            <html:messages id="errors" message="true" property="errors">
-                                <font color="red" face="verdana"><li><bean:write name="errors"/></font>
-                            </html:messages>
-                        </td>
-                    </tr>                            
-                </logic:messagesPresent>
-                <logic:messagesPresent name="messages" message="true">
-                    <tr>
-                        <td class="labelLeft" colspan="2">
-                            <html:messages id="messages" message="true" property="messages">
-                                <font color="green" face="verdana"><li><bean:write name="messages"/></font>
-                            </html:messages>
-                        </td>
-                    </tr>
-                </logic:messagesPresent>
-                <logic:messagesPresent name="warnings" message="true">
-                    <tr>
-                        <td class="labelLeft" colspan="2">
-                            <html:messages id="warnings" message="true" property="warnings">
-                                <font color="orange" face="verdana"><li><bean:write name="warnings"/></font>
-                            </html:messages>
-                        </td>
-                    </tr>
-                </logic:messagesPresent>
-                <html:form action="/sspcloc" method="POST">
+	<html:form action="/sspcloc" method="POST">
+	    <tr>
+	        <td width="2%">&nbsp;</td>
+	        <td valign="top">
+	            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inputtable">
+	                <logic:messagesPresent name="errors" message="true">
+	                    <tr>
+	                        <td class="labelLeft" colspan="2" valign="top">
+	                            <html:messages id="errors" message="true" property="errors">
+	                                <font color="red" face="verdana"><li><bean:write name="errors"/></font>
+	                            </html:messages>
+	                        </td>
+	                    </tr>                            
+	                </logic:messagesPresent>
+	                <logic:messagesPresent name="messages" message="true">
+	                    <tr>
+	                        <td class="labelLeft" colspan="2">
+	                            <html:messages id="messages" message="true" property="messages">
+	                                <font color="green" face="verdana"><li><bean:write name="messages"/></font>
+	                            </html:messages>
+	                        </td>
+	                    </tr>
+	                </logic:messagesPresent>
+	                <logic:messagesPresent name="warnings" message="true">
+	                    <tr>
+	                        <td class="labelLeft" colspan="2">
+	                            <html:messages id="warnings" message="true" property="warnings">
+	                                <font color="orange" face="verdana"><li><bean:write name="warnings"/></font>
+	                            </html:messages>
+	                        </td>
+	                    </tr>
+	                </logic:messagesPresent>
                     <tr>
                         <td colspan="2">
                             <table id="dataTable" width="100%" border="0" class="inputsubtable" cellpadding="2" cellspacing="1">
@@ -261,13 +261,13 @@
                                                 <html:submit property="submit" styleClass="subtlebutton" onclick="javascript:handleSubmit('pspcloc.spl')"><bean:message key="label.submit"/></html:submit>
                                             </td>                                        
                                         </tr>
-                                    </fieldset>
-                                </td>
-                            </tr>
-                        </table>
-                    </logic:equal>
-                </html:form>
-            </table>
-        </td>
-    </tr>
+                       				</table>                                        
+								</fieldset>
+							</td>
+						</tr>
+            		</table>
+				</logic:equal>            		
+        	</td>
+    	</tr>
+	</html:form>    
 </table>
