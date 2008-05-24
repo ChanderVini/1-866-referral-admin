@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="GenUserForm" type="com.cssc.spl.struts.form.GenUserForm"/>
+        <form-bean name="LoginForm" type="com.cssc.spl.struts.form.LoginForm"/>        
+        <form-bean name="RegisterForm" type="com.cssc.spl.struts.form.RegisterForm"/>
+    </form-beans>    
+    <global-exceptions>    
+    </global-exceptions>
+    <global-forwards>
+    </global-forwards>
+
+ <!--Start of User functionalists-->
+ <action-mappings>
+        <action path="/user" name="LoginForm" scope="request" type="com.cssc.spl.struts.action.LoginAction">
+            <forward name="success" path="tile.genuserlogin"/>
+            <forward name="error" path="tile.genuserlogin"/>
+        </action>
+        <action path="/userlogin" name="LoginForm" scope="request" type="com.cssc.spl.struts.action.LoginAction" validate="false">
+            <forward name="success" path="/userdwnsub.spl"/>
+            <forward name="error" path="tile.genuserlogin"/>
+        </action>  
+        <action path="/userreg" name="RegisterForm" scope="session" type="com.cssc.spl.struts.action.RegisterAction" validate="false">
+            <forward name="success" path="tile.genuserregister"/>
+            <forward name="error" path="tile.genuserregister"/>
+        </action>          
+        <action path="/userregsub" name="RegisterForm" scope="session" type="com.cssc.spl.struts.action.RegisterAction" validate="false">
+            <forward name="success" path="/userdwnsub.spl"/>
+            <forward name="error" path="tile.genuserregister"/>
+        </action>                  
+        <action path="/userdwn" name="GenUserForm" scope="session" type="com.cssc.spl.struts.action.GenUserAction">
+            <forward name="success" path="/userdwnsub.spl"/>
+            <forward name="error" path="tile.genuserdownload"/>
+            <forward name="noaccess" path="tile.genuserlogin"/>
+        </action>    
+        <action path="/userdwnsub" name="GenUserForm" scope="session" type="com.cssc.spl.struts.action.GenUserAction">
+            <forward name="success" path="tile.genuserdownload"/>
+            <forward name="error" path="tile.genuserlogin"/>
+            <forward name="noaccess" path="tile.genuserlogin"/>
+        </action>   
+        <action path="/filedwn" name="GenUserForm" scope="session" type="com.cssc.spl.struts.action.GenUserAction">
+            <forward name="success" path="tile.genuserdownload"/>
+            <forward name="error" path="tile.genuserdownload"/>
+            <forward name="noaccess" path="tile.genuserlogin"/>
+        </action>    
+        <!--End of User functionalities-->
+    </action-mappings>    
+    <controller  processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/cssc/spl/struts/properties/splproperties"/>    
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/spl_tilesdef.xml"/>
+        <set-property property="moduleAware" value="true"/>
+    </plug-in>
+</struts-config>
